@@ -1,9 +1,13 @@
+# The deployment section should be excluded until
+# it is explicitly included in module 5
+#test
+
 deployment:
-production:
-branch: master
-commands:
-- ./deploy_prod.sh
+  staging:
+    branch: master
+    heroku:
+      appname: MyExpressApp 
 
 test:
-override:
-- echo 'no tests, just say us Okay!'
+  override:    
+    - mocha
